@@ -1,0 +1,814 @@
+<!--
+  WordPress: paste into a Custom HTML block.
+  Set API origin if not same-host:
+    <script>window.CERTNOVA_BREVO_FORMS_API = 'https://your-domain.com';</script>
+-->
+<div id="certnova-cba-consulting-root" class="certnova-form" data-form-key="CBA_Consulting">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700&display=swap');
+
+    #certnova-cba-consulting-root.certnova-form {
+      --cn-blue: #0063f5;
+      --cn-black: #000000;
+      --cn-white: #ffffff;
+      --cn-border: #d9d9d9;
+      --cn-muted: #444;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      color: var(--cn-black);
+      background: var(--cn-white);
+      max-width: 720px;
+      margin: 0 auto;
+      padding: clamp(1rem, 4vw, 1.75rem) clamp(0.85rem, 4vw, 1.35rem) clamp(2rem, 6vw, 2.75rem);
+      box-sizing: border-box;
+    }
+    #certnova-cba-consulting-root.certnova-form *,
+    #certnova-cba-consulting-root.certnova-form *::before,
+    #certnova-cba-consulting-root.certnova-form *::after {
+      box-sizing: border-box;
+    }
+
+    #certnova-cba-consulting-root .cn-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    }
+    #certnova-cba-consulting-root .cn-brand svg {
+      flex-shrink: 0;
+      width: clamp(44px, 10vw, 52px);
+      height: clamp(44px, 10vw, 52px);
+    }
+    #certnova-cba-consulting-root .cn-brand-text strong {
+      display: block;
+      font-size: clamp(1.15rem, 3.5vw, 1.35rem);
+      letter-spacing: -0.02em;
+      color: var(--cn-blue);
+      font-weight: 700;
+    }
+    #certnova-cba-consulting-root .cn-brand-text span {
+      display: block;
+      font-size: clamp(0.72rem, 2.2vw, 0.8rem);
+      font-weight: 500;
+      color: var(--cn-blue);
+      margin-top: 0.15rem;
+    }
+
+    #certnova-cba-consulting-root h1 {
+      font-size: clamp(1.25rem, 4.2vw, 1.75rem);
+      margin: 0 0 0.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    #certnova-cba-consulting-root .cn-sub {
+      margin: 0 0 clamp(1.25rem, 4vw, 1.75rem);
+      font-size: clamp(0.9rem, 2.6vw, 1rem);
+      line-height: 1.55;
+      color: var(--cn-muted);
+    }
+
+    /* Progress */
+    #certnova-cba-consulting-root .cn-stepper {
+      margin-bottom: clamp(1.25rem, 4vw, 1.75rem);
+    }
+    #certnova-cba-consulting-root .cn-progress-track {
+      height: 8px;
+      background: #e8ecf0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    #certnova-cba-consulting-root .cn-progress-fill {
+      height: 100%;
+      width: 25%;
+      background: var(--cn-blue);
+      border-radius: 999px;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #certnova-cba-consulting-root .cn-step-labels {
+      display: flex;
+      list-style: none;
+      margin: 0.65rem 0 0;
+      padding: 0;
+      justify-content: space-between;
+      gap: 0.35rem;
+    }
+    #certnova-cba-consulting-root .cn-step-labels li {
+      flex: 1;
+      text-align: center;
+      font-size: clamp(0.68rem, 2.4vw, 0.82rem);
+      font-weight: 500;
+      color: #888;
+      line-height: 1.25;
+      padding: 0 0.15rem;
+    }
+    #certnova-cba-consulting-root .cn-step-labels li .cn-step-num {
+      display: block;
+      font-weight: 700;
+      font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+      margin-bottom: 0.15rem;
+      color: #aaa;
+    }
+    #certnova-cba-consulting-root .cn-step-labels li.is-current {
+      color: var(--cn-black);
+    }
+    #certnova-cba-consulting-root .cn-step-labels li.is-current .cn-step-num {
+      color: var(--cn-blue);
+    }
+    #certnova-cba-consulting-root .cn-step-labels li.is-done {
+      color: var(--cn-black);
+    }
+    #certnova-cba-consulting-root .cn-step-labels li.is-done .cn-step-num {
+      color: var(--cn-blue);
+    }
+
+    #certnova-cba-consulting-root .cn-step-panel {
+      margin: 0;
+    }
+    #certnova-cba-consulting-root .cn-step-panel[hidden] {
+      display: none !important;
+    }
+
+    #certnova-cba-consulting-root fieldset {
+      border: 1px solid var(--cn-border);
+      border-radius: 12px;
+      padding: clamp(0.85rem, 3vw, 1.1rem) clamp(0.85rem, 3vw, 1.1rem) 0.35rem;
+      margin: 0;
+    }
+    #certnova-cba-consulting-root legend {
+      padding: 0 0.35rem;
+      font-weight: 700;
+      font-size: clamp(0.88rem, 2.5vw, 0.95rem);
+    }
+    #certnova-cba-consulting-root .cn-field {
+      margin-bottom: clamp(0.85rem, 2.5vw, 1rem);
+    }
+    #certnova-cba-consulting-root label.cn-label {
+      display: block;
+      font-size: clamp(0.85rem, 2.4vw, 0.92rem);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    #certnova-cba-consulting-root .cn-req {
+      color: var(--cn-blue);
+      font-weight: 700;
+    }
+
+    #certnova-cba-consulting-root .cn-hint {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #555;
+      margin-top: 0.3rem;
+    }
+    #certnova-cba-consulting-root input[type='text'],
+    #certnova-cba-consulting-root input[type='email'],
+    #certnova-cba-consulting-root input[type='tel'],
+    #certnova-cba-consulting-root input[type='file'],
+    #certnova-cba-consulting-root select,
+    #certnova-cba-consulting-root textarea {
+      width: 100%;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--cn-border);
+      border-radius: 10px;
+      font-size: clamp(0.95rem, 2.8vw, 1rem);
+      font-family: inherit;
+      color: var(--cn-black);
+      background: var(--cn-white);
+      min-height: 48px;
+    }
+    #certnova-cba-consulting-root textarea {
+      resize: vertical;
+      min-height: 7rem;
+    }
+    #certnova-cba-consulting-root input[type='file'] {
+      padding: 0.5rem 0;
+      min-height: auto;
+      border: none;
+      background: transparent;
+    }
+    #certnova-cba-consulting-root input:focus,
+    #certnova-cba-consulting-root select:focus,
+    #certnova-cba-consulting-root textarea:focus {
+      outline: 2px solid var(--cn-blue);
+      outline-offset: 2px;
+      border-color: var(--cn-blue);
+    }
+    #certnova-cba-consulting-root input:invalid:not(:focus):not(:placeholder-shown),
+    #certnova-cba-consulting-root select:invalid {
+      border-color: #c62828;
+    }
+
+    #certnova-cba-consulting-root .cn-check-grid {
+      display: grid;
+      gap: 0.5rem;
+    }
+    @media (min-width: 520px) {
+      #certnova-cba-consulting-root .cn-check-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    #certnova-cba-consulting-root .cn-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-size: clamp(0.84rem, 2.3vw, 0.92rem);
+      line-height: 1.35;
+    }
+    #certnova-cba-consulting-root .cn-check input {
+      width: 1.15rem;
+      height: 1.15rem;
+      min-width: 1.15rem;
+      margin-top: 0.12rem;
+      accent-color: var(--cn-blue);
+    }
+    #certnova-cba-consulting-root .cn-cat-field .cn-check-grid {
+      max-height: min(52vh, 22rem);
+      overflow-y: auto;
+      padding-right: 0.25rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #certnova-cba-consulting-root .cn-legal {
+      border: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+    }
+    #certnova-cba-consulting-root .cn-legal .cn-check {
+      margin-bottom: 0.55rem;
+    }
+    #certnova-cba-consulting-root .cn-legal a {
+      color: var(--cn-blue);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    #certnova-cba-consulting-root .cn-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-top: clamp(1rem, 3vw, 1.35rem);
+    }
+    @media (min-width: 480px) {
+      #certnova-cba-consulting-root .cn-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+      }
+      #certnova-cba-consulting-root .cn-nav .cn-btn-back {
+        margin-right: auto;
+      }
+    }
+    #certnova-cba-consulting-root .cn-nav .cn-btn {
+      width: 100%;
+    }
+    @media (min-width: 480px) {
+      #certnova-cba-consulting-root .cn-nav .cn-btn {
+        width: auto;
+        min-width: min(100%, 11rem);
+        flex: 1 1 auto;
+      }
+      #certnova-cba-consulting-root .cn-nav .cn-btn-back {
+        flex: 0 0 auto;
+        min-width: 6.5rem;
+      }
+    }
+
+    #certnova-cba-consulting-root .cn-nav-final .cn-btn-primary {
+      flex: 1 1 auto;
+    }
+
+    #certnova-cba-consulting-root .cn-btn {
+      appearance: none;
+      border: none;
+      border-radius: 10px;
+      padding: 0.88rem 1.15rem;
+      font-size: clamp(0.92rem, 2.6vw, 1rem);
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      text-align: center;
+      line-height: 1.25;
+      min-height: 48px;
+    }
+    #certnova-cba-consulting-root .cn-btn-primary {
+      background: var(--cn-blue);
+      color: var(--cn-white);
+    }
+    #certnova-cba-consulting-root .cn-btn-primary:hover:not(:disabled) {
+      filter: brightness(0.95);
+    }
+    #certnova-cba-consulting-root .cn-btn-primary:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+    #certnova-cba-consulting-root .cn-btn-secondary {
+      background: var(--cn-white);
+      color: var(--cn-blue);
+      border: 2px solid var(--cn-blue);
+    }
+    #certnova-cba-consulting-root .cn-btn-secondary:hover:not(:disabled) {
+      background: rgba(0, 99, 245, 0.06);
+    }
+    #certnova-cba-consulting-root .cn-btn-back {
+      background: var(--cn-white);
+      color: var(--cn-black);
+      border: 2px solid var(--cn-border);
+    }
+    #certnova-cba-consulting-root .cn-btn-back:hover:not(:disabled) {
+      border-color: #bbb;
+      background: #fafafa;
+    }
+
+    #certnova-cba-consulting-root .cn-msg {
+      margin-top: 1rem;
+      padding: 0.75rem 0.85rem;
+      border-radius: 10px;
+      font-size: clamp(0.88rem, 2.5vw, 0.95rem);
+      display: none;
+    }
+    #certnova-cba-consulting-root .cn-msg.cn-show {
+      display: block;
+    }
+    #certnova-cba-consulting-root .cn-msg.cn-ok {
+      border: 1px solid #b7e1c1;
+      background: #f0fff4;
+      color: #14532d;
+    }
+    #certnova-cba-consulting-root .cn-msg.cn-err {
+      border: 1px solid #f5c2c7;
+      background: #fff5f5;
+      color: #842029;
+    }
+
+    #certnova-cba-consulting-root .cn-cat-error {
+      color: #c62828;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-top: 0.35rem;
+      display: none;
+    }
+    #certnova-cba-consulting-root .cn-cat-error.cn-show {
+      display: block;
+    }
+
+    #certnova-cba-consulting-root .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+  </style>
+
+  <div class="cn-brand" aria-hidden="true">
+    <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="26" y="4" width="32" height="32" rx="9" transform="rotate(45 26 4)" fill="#0063F5" />
+      <circle cx="26" cy="26" r="7" fill="white" />
+    </svg>
+    <div class="cn-brand-text">
+      <strong>CertNova</strong>
+      <span>Software Solutions</span>
+    </div>
+  </div>
+
+  <h1>CBA Consulting</h1>
+  <p class="cn-sub">
+    Request P.Eng. CBA consulting support. Share your situation and upload your CV and CBA so our team can review and advise
+    you on the best next steps.
+  </p>
+
+  <div class="cn-stepper" aria-label="Form steps">
+    <div class="cn-progress-track">
+      <div class="cn-progress-fill" id="cn-progress-fill"></div>
+    </div>
+    <ol class="cn-step-labels" id="cn-step-labels">
+      <li data-step-meta="1" class="is-current">
+        <span class="cn-step-num">1</span>
+        <span class="cn-step-title">Contact</span>
+      </li>
+      <li data-step-meta="2">
+        <span class="cn-step-num">2</span>
+        <span class="cn-step-title">Licensing</span>
+      </li>
+      <li data-step-meta="3">
+        <span class="cn-step-num">3</span>
+        <span class="cn-step-title">CBA details</span>
+      </li>
+      <li data-step-meta="4">
+        <span class="cn-step-num">4</span>
+        <span class="cn-step-title">Upload</span>
+      </li>
+    </ol>
+  </div>
+
+  <form id="certnova-cba-consulting-form" novalidate enctype="multipart/form-data">
+    <!-- Step 1 -->
+    <div class="cn-step-panel" data-step="1" id="cn-panel-1">
+      <fieldset>
+        <legend>Basic contact information</legend>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-FIRSTNAME">First name <span class="cn-req" aria-hidden="true">*</span></label>
+          <input id="cn-FIRSTNAME" name="FIRSTNAME" type="text" autocomplete="given-name" required maxlength="120" />
+        </div>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-EMAIL">Email address <span class="cn-req" aria-hidden="true">*</span></label>
+          <input id="cn-EMAIL" name="EMAIL" type="email" autocomplete="email" required />
+        </div>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-PHONE">Phone number <span class="cn-req" aria-hidden="true">*</span></label>
+          <input id="cn-PHONE" name="PHONE" type="tel" autocomplete="tel" required minlength="7" maxlength="40" />
+        </div>
+      </fieldset>
+      <div class="cn-nav">
+        <button type="button" class="cn-btn cn-btn-primary cn-btn-next" data-go="next">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="cn-step-panel" data-step="2" id="cn-panel-2" hidden inert>
+      <fieldset>
+        <legend>Licensing situation</legend>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-ASSOCIATION">Which engineering association are you applying through? <span class="cn-req" aria-hidden="true">*</span></label>
+          <select id="cn-ASSOCIATION" name="ASSOCIATION" required>
+            <option value="" disabled selected>Select…</option>
+            <option>PEO</option>
+            <option>APEGS</option>
+            <option>EGBC</option>
+            <option>APEGA</option>
+            <option>Engineers Nova Scotia</option>
+            <option>Engineers Geoscientists Manitoba</option>
+            <option>Engineers PEI</option>
+            <option>Engineers Yukon</option>
+            <option>NAPEG</option>
+            <option>OIQ</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-CBA_STAGE">What stage are you currently at? <span class="cn-req" aria-hidden="true">*</span></label>
+          <select id="cn-CBA_STAGE" name="CBA_STAGE" required>
+            <option value="" disabled selected>Select…</option>
+            <option>I received rejection/comments and need to resubmit</option>
+            <option>I received partial approval, but some competencies were rejected</option>
+            <option>My whole CBA submission was rejected</option>
+            <option>I have not submitted yet, but I’m worried about rejection</option>
+            <option>I’m preparing my first CBA submission</option>
+          </select>
+        </div>
+      </fieldset>
+      <div class="cn-nav">
+        <button type="button" class="cn-btn cn-btn-back cn-btn-prev" data-go="prev">Back</button>
+        <button type="button" class="cn-btn cn-btn-primary cn-btn-next" data-go="next">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="cn-step-panel" data-step="3" id="cn-panel-3" hidden inert>
+      <fieldset>
+        <legend>Rejection details</legend>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-REJECTED_COUNT">How many competencies were rejected or flagged? <span class="cn-req" aria-hidden="true">*</span></label>
+          <select id="cn-REJECTED_COUNT" name="REJECTED_COUNT" required></select>
+        </div>
+        <div class="cn-field cn-cat-field">
+          <span class="cn-label">Which competency categories were rejected? <span class="cn-req" aria-hidden="true">*</span></span>
+          <div class="cn-check-grid" id="cn-categories" role="group" aria-labelledby="cn-cat-legend"></div>
+          <span id="cn-cat-legend" class="sr-only">Select at least one category</span>
+          <p class="cn-cat-error" id="cn-cat-error" role="alert">Select at least one competency category.</p>
+        </div>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-RESUBMIT_TIMELINE">When do you want to resubmit? <span class="cn-req" aria-hidden="true">*</span></label>
+          <select id="cn-RESUBMIT_TIMELINE" name="RESUBMIT_TIMELINE" required>
+            <option value="" disabled selected>Select…</option>
+            <option>As soon as possible</option>
+            <option>Within 1 week</option>
+            <option>Within 2-4 weeks</option>
+            <option>Within 1-2 months</option>
+            <option>No deadline yet</option>
+          </select>
+        </div>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-HELP_NEEDED">What type of help are you looking for? <span class="cn-req" aria-hidden="true">*</span></label>
+          <select id="cn-HELP_NEEDED" name="HELP_NEEDED" required>
+            <option value="" disabled selected>Select…</option>
+            <option>Review my rejection comments</option>
+            <option>Review my rejected competencies</option>
+            <option>Help me rewrite and improve my competencies</option>
+            <option>P.Eng. review before resubmission</option>
+            <option>Full support until I resubmit</option>
+            <option>I’m not sure yet</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <div class="cn-nav">
+        <button type="button" class="cn-btn cn-btn-back cn-btn-prev" data-go="prev">Back</button>
+        <button type="button" class="cn-btn cn-btn-primary cn-btn-next" data-go="next">Next</button>
+      </div>
+    </div>
+
+    <div class="cn-step-panel" data-step="4" id="cn-panel-4" hidden inert>
+      <fieldset>
+        <legend>Your situation &amp; documents</legend>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-SITUATION">Explain your situation and how we can help <span class="cn-req" aria-hidden="true">*</span></label>
+          <textarea id="cn-SITUATION" name="SITUATION" rows="5" required minlength="10" maxlength="8000" placeholder="Tell us about your CBA goals, timeline, and what support you need…"></textarea>
+        </div>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-file-cv">Upload your CV <span class="cn-req" aria-hidden="true">*</span></label>
+          <input id="cn-file-cv" name="file_cv" type="file" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+          <p class="cn-hint">PDF or Word, max 10 MB.</p>
+        </div>
+        <div class="cn-field">
+          <label class="cn-label" for="cn-file-cba">Upload your CBA for us to review <span class="cn-req" aria-hidden="true">*</span></label>
+          <input id="cn-file-cba" name="file_cba" type="file" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+          <p class="cn-hint">PDF or Word, max 10 MB.</p>
+        </div>
+      </fieldset>
+
+      <fieldset class="cn-legal">
+        <legend class="cn-label">Consent <span class="cn-req" aria-hidden="true">*</span></legend>
+        <label class="cn-check">
+          <input type="checkbox" name="agree_privacy" value="true" required />
+          <span>I have read and agree to the <a href="https://competencybasedassessment.ca/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</span>
+        </label>
+        <label class="cn-check">
+          <input type="checkbox" name="agree_terms" value="true" required />
+          <span>I have read and agree to the <a href="https://competencybasedassessment.ca/terms-and-conditions/" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>.</span>
+        </label>
+      </fieldset>
+
+      <div class="cn-nav cn-nav-final">
+        <button type="button" class="cn-btn cn-btn-back cn-btn-prev" data-go="prev">Back</button>
+        <button id="cn-btn-submit" class="cn-btn cn-btn-primary" type="submit">Get Support</button>
+      </div>
+    </div>
+  </form>
+
+  <div id="cn-form-msg" class="cn-msg" role="status" aria-live="polite"></div>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('certnova-cba-consulting-root');
+    var form = document.getElementById('certnova-cba-consulting-form');
+    var msg = document.getElementById('cn-form-msg');
+    var rejectedSelect = document.getElementById('cn-REJECTED_COUNT');
+    var catHost = document.getElementById('cn-categories');
+    var catError = document.getElementById('cn-cat-error');
+    var progressFill = document.getElementById('cn-progress-fill');
+    var stepLabels = document.getElementById('cn-step-labels');
+    var totalSteps = 4;
+    var currentStep = 1;
+    var successRedirectUrl = 'https://competencybasedassessment.ca/';
+    var maxFileBytes = 10 * 1024 * 1024;
+
+    var categories = [
+      'Technical competence',
+      'Communication',
+      'Project and financial management',
+      'Team effectiveness',
+      'Professional accountability',
+      'Social, economic, environmental, and sustainability',
+      'Personal continuing professional development',
+      'I’m not sure',
+    ];
+
+    var ph = document.createElement('option');
+    ph.value = '';
+    ph.disabled = true;
+    ph.selected = true;
+    ph.textContent = 'Select…';
+    rejectedSelect.appendChild(ph);
+    for (var i = 1; i <= 33; i += 1) {
+      var o = document.createElement('option');
+      o.value = String(i);
+      o.textContent = String(i);
+      rejectedSelect.appendChild(o);
+    }
+    var oAll = document.createElement('option');
+    oAll.value = 'All competencies';
+    oAll.textContent = 'All competencies';
+    rejectedSelect.appendChild(oAll);
+
+    categories.forEach(function (label, idx) {
+      var id = 'cn-cat-' + idx;
+      var wrap = document.createElement('label');
+      wrap.className = 'cn-check';
+      wrap.setAttribute('for', id);
+      var inp = document.createElement('input');
+      inp.type = 'checkbox';
+      inp.name = 'REJECTED_CATEGORIES';
+      inp.value = label;
+      inp.id = id;
+      var span = document.createElement('span');
+      span.textContent = label;
+      wrap.appendChild(inp);
+      wrap.appendChild(span);
+      catHost.appendChild(wrap);
+    });
+
+    function getPanels() {
+      return form.querySelectorAll('.cn-step-panel');
+    }
+
+    function setProgress(step) {
+      var pct = (step / totalSteps) * 100;
+      progressFill.style.width = pct + '%';
+    }
+
+    function setStepMeta(step) {
+      var items = stepLabels.querySelectorAll('li');
+      items.forEach(function (li) {
+        var n = parseInt(li.getAttribute('data-step-meta'), 10);
+        li.classList.remove('is-current', 'is-done');
+        if (n < step) li.classList.add('is-done');
+        else if (n === step) li.classList.add('is-current');
+      });
+    }
+
+    function applyStep(step) {
+      currentStep = step;
+      getPanels().forEach(function (panel) {
+        var n = parseInt(panel.getAttribute('data-step'), 10);
+        var active = n === step;
+        panel.hidden = !active;
+        if (active) panel.removeAttribute('inert');
+        else panel.setAttribute('inert', '');
+      });
+      setProgress(step);
+      setStepMeta(step);
+      hideMessage();
+      try {
+        var first = form.querySelector('.cn-step-panel[data-step="' + step + '"] input, .cn-step-panel[data-step="' + step + '"] select');
+        if (first) first.focus();
+      } catch (e) {}
+    }
+
+    function validatePanel(step) {
+      var panel = form.querySelector('.cn-step-panel[data-step="' + step + '"]');
+      if (!panel) return false;
+      var fields = panel.querySelectorAll('input, select, textarea');
+      for (var i = 0; i < fields.length; i++) {
+        var el = fields[i];
+        if (el.type === 'button' || el.type === 'submit') continue;
+        if (el.name === 'REJECTED_CATEGORIES') continue;
+        if (typeof el.checkValidity === 'function' && !el.checkValidity()) {
+          el.reportValidity();
+          return false;
+        }
+      }
+      if (step === 3) {
+        var checked = form.querySelectorAll('input[name="REJECTED_CATEGORIES"]:checked').length;
+        if (checked < 1) {
+          catError.classList.add('cn-show');
+          return false;
+        }
+        catError.classList.remove('cn-show');
+      }
+      if (step === 4) {
+        var cv = form.querySelector('#cn-file-cv');
+        var cbaFile = form.querySelector('#cn-file-cba');
+        if (cv && cv.files && cv.files[0] && cv.files[0].size > maxFileBytes) {
+          showMessage('err', 'CV must be 10 MB or smaller.');
+          return false;
+        }
+        if (cbaFile && cbaFile.files && cbaFile.files[0] && cbaFile.files[0].size > maxFileBytes) {
+          showMessage('err', 'CBA file must be 10 MB or smaller.');
+          return false;
+        }
+      }
+      return true;
+    }
+
+    form.querySelectorAll('input[name="REJECTED_CATEGORIES"]').forEach(function (cb) {
+      cb.addEventListener('change', function () {
+        if (form.querySelectorAll('input[name="REJECTED_CATEGORIES"]:checked').length) {
+          catError.classList.remove('cn-show');
+        }
+      });
+    });
+
+    form.addEventListener('click', function (ev) {
+      var t = ev.target;
+      if (!t || !t.getAttribute) return;
+      var go = t.getAttribute('data-go');
+      if (go === 'next') {
+        ev.preventDefault();
+        if (!validatePanel(currentStep)) return;
+        if (currentStep < totalSteps) applyStep(currentStep + 1);
+      }
+      if (go === 'prev') {
+        ev.preventDefault();
+        if (currentStep > 1) applyStep(currentStep - 1);
+      }
+    });
+
+    function apiBase() {
+      if (typeof window.CERTNOVA_BREVO_FORMS_API === 'string' && window.CERTNOVA_BREVO_FORMS_API.trim()) {
+        return window.CERTNOVA_BREVO_FORMS_API.replace(/\/+$/, '');
+      }
+      return '';
+    }
+
+    function resolveApiBase() {
+      var b = apiBase();
+      if (b) return b;
+      try {
+        var p = window.location.pathname || '';
+        if (p.indexOf('/forms/') !== -1) {
+          return window.location.origin;
+        }
+      } catch (e) {}
+      return '';
+    }
+
+    function showMessage(kind, text) {
+      msg.className = 'cn-msg cn-show ' + (kind === 'ok' ? 'cn-ok' : 'cn-err');
+      msg.textContent = text;
+    }
+
+    function hideMessage() {
+      msg.className = 'cn-msg';
+      msg.textContent = '';
+    }
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      hideMessage();
+      if (currentStep !== 4) return;
+      if (!validatePanel(4)) return;
+
+      var base = resolveApiBase();
+      var formKey = root.getAttribute('data-form-key') || 'CBA_Consulting';
+      if (!base) {
+        showMessage('err', 'Set window.CERTNOVA_BREVO_FORMS_API to your API server URL (see HTML comment).');
+        return;
+      }
+
+      var fd = new FormData(form);
+      var cats = Array.prototype.slice.call(
+        form.querySelectorAll('input[name="REJECTED_CATEGORIES"]:checked'),
+      );
+      fd.delete('REJECTED_CATEGORIES');
+      cats.forEach(function (el) {
+        fd.append('REJECTED_CATEGORIES', el.value);
+      });
+
+      var submitBtn = document.getElementById('cn-btn-submit');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      fetch(base + '/api/forms/' + encodeURIComponent(formKey), {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: fd,
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { res: res, data: data };
+          });
+        })
+        .then(function (_ref) {
+          var res = _ref.res;
+          var data = _ref.data;
+          if (res.ok && data && data.ok) {
+            var submitBtn = document.getElementById('cn-btn-submit');
+            if (submitBtn) submitBtn.textContent = 'Redirecting…';
+            window.location.href = successRedirectUrl;
+            return;
+          }
+          var detail =
+            data && data.error
+              ? data.error
+              : 'Something went wrong. Please check your answers and try again.';
+          if (data && data.details && data.details.fieldErrors) {
+            var fe = data.details.fieldErrors;
+            var parts = [];
+            Object.keys(fe).forEach(function (k) {
+              if (fe[k] && fe[k][0]) parts.push(fe[k][0]);
+            });
+            if (parts.length) detail = parts.join(' ');
+          }
+          showMessage('err', detail);
+        })
+        .catch(function () {
+          showMessage('err', 'Network error. Please try again in a moment.');
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Get Support';
+          }
+        });
+    });
+
+    applyStep(1);
+  })();
+</script>
