@@ -252,22 +252,8 @@
       }
     }
 
-    #certnova-cba-rejection-root .cn-actions-final {
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      margin-top: 0.5rem;
-      width: 100%;
-    }
-    @media (min-width: 520px) {
-      #certnova-cba-rejection-root .cn-actions-final {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      #certnova-cba-rejection-root .cn-actions-final .cn-btn {
-        flex: 1 1 calc(50% - 0.35rem);
-        min-width: 12rem;
-      }
+    #certnova-cba-rejection-root .cn-nav-final .cn-btn-primary {
+      flex: 1 1 auto;
     }
 
     #certnova-cba-rejection-root .cn-btn {
@@ -356,11 +342,6 @@
       border: 0;
     }
 
-    @media (min-width: 480px) {
-      #certnova-cba-rejection-root .cn-nav-final .cn-actions-final {
-        flex: 1 1 min(100%, 28rem);
-      }
-    }
   </style>
 
   <div class="cn-brand" aria-hidden="true">
@@ -515,10 +496,7 @@
 
       <div class="cn-nav cn-nav-final">
         <button type="button" class="cn-btn cn-btn-back cn-btn-prev" data-go="prev">Back</button>
-        <div class="cn-actions-final">
-          <button class="cn-btn cn-btn-primary" type="submit">Get My CBA Rejection Review</button>
-          <button class="cn-btn cn-btn-secondary" type="submit" aria-label="Alternative call to action">See How to Fix My Rejected CBA</button>
-        </div>
+        <button id="cn-btn-submit" class="cn-btn cn-btn-primary" type="submit">Get Support</button>
       </div>
     </div>
   </form>
@@ -538,6 +516,7 @@
     var stepLabels = document.getElementById('cn-step-labels');
     var totalSteps = 3;
     var currentStep = 1;
+    var successRedirectUrl = 'https://competencybasedassessment.ca/peng-cba-rejected/';
 
     var categories = [
       'Technical competence',
@@ -750,9 +729,9 @@
           var res = _ref.res;
           var data = _ref.data;
           if (res.ok && data && data.ok) {
-            showMessage('ok', 'Thanks — we received your details. We’ll be in touch soon.');
-            form.reset();
-            applyStep(1);
+            var submitBtn = document.getElementById('cn-btn-submit');
+            if (submitBtn) submitBtn.textContent = 'Redirecting…';
+            window.location.href = successRedirectUrl;
             return;
           }
           var detail =
