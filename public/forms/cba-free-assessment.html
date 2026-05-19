@@ -1,0 +1,318 @@
+<!--
+  WordPress: paste into a Custom HTML block.
+  <script>window.CERTNOVA_BREVO_FORMS_API = 'https://forms.competencybasedassessment.ca';</script>
+-->
+<div id="certnova-cba-free-root" class="certnova-form" data-form-key="CBA_Free_Assessment">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    #certnova-cba-free-root.certnova-form {
+      --cn-blue: #0063f5;
+      --cn-black: #000000;
+      --cn-white: #ffffff;
+      --cn-border: #d9d9d9;
+      --cn-muted: #444;
+      font-family: 'Poppins', system-ui, sans-serif;
+      color: var(--cn-black);
+      background: var(--cn-white);
+      max-width: 520px;
+      margin: 0 auto;
+      padding: clamp(1rem, 4vw, 1.75rem) clamp(0.85rem, 4vw, 1.35rem) clamp(2rem, 6vw, 2.75rem);
+      box-sizing: border-box;
+    }
+    #certnova-cba-free-root.certnova-form *,
+    #certnova-cba-free-root.certnova-form *::before,
+    #certnova-cba-free-root.certnova-form *::after {
+      box-sizing: border-box;
+    }
+    #certnova-cba-free-root .cn-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    }
+    #certnova-cba-free-root .cn-brand svg {
+      width: clamp(44px, 10vw, 52px);
+      height: clamp(44px, 10vw, 52px);
+      flex-shrink: 0;
+    }
+    #certnova-cba-free-root .cn-brand-text strong {
+      display: block;
+      font-size: clamp(1.15rem, 3.5vw, 1.35rem);
+      color: var(--cn-blue);
+      font-weight: 700;
+    }
+    #certnova-cba-free-root .cn-brand-text span {
+      display: block;
+      font-size: clamp(0.72rem, 2.2vw, 0.8rem);
+      font-weight: 500;
+      color: var(--cn-blue);
+      margin-top: 0.12rem;
+    }
+    #certnova-cba-free-root h1 {
+      font-size: clamp(1.25rem, 4.2vw, 1.65rem);
+      margin: 0 0 0.45rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    #certnova-cba-free-root .cn-sub {
+      margin: 0 0 1.35rem;
+      font-size: clamp(0.9rem, 2.6vw, 1rem);
+      line-height: 1.55;
+      color: var(--cn-muted);
+    }
+    #certnova-cba-free-root .cn-field {
+      margin-bottom: 1rem;
+    }
+    #certnova-cba-free-root label.cn-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    #certnova-cba-free-root .cn-req {
+      color: var(--cn-blue);
+      font-weight: 700;
+    }
+    #certnova-cba-free-root input[type='text'],
+    #certnova-cba-free-root input[type='email'],
+    #certnova-cba-free-root input[type='tel'] {
+      width: 100%;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid var(--cn-border);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      min-height: 48px;
+    }
+    #certnova-cba-free-root input:focus {
+      outline: 2px solid var(--cn-blue);
+      outline-offset: 2px;
+      border-color: var(--cn-blue);
+    }
+    #certnova-cba-free-root .cn-row {
+      display: grid;
+      gap: 0.75rem;
+    }
+    @media (min-width: 480px) {
+      #certnova-cba-free-root .cn-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    #certnova-cba-free-root .cn-legal {
+      border: none;
+      padding: 0;
+      margin: 0.25rem 0 1rem;
+    }
+    #certnova-cba-free-root .cn-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+    #certnova-cba-free-root .cn-check input {
+      width: 1.1rem;
+      height: 1.1rem;
+      margin-top: 0.12rem;
+      accent-color: var(--cn-blue);
+      flex-shrink: 0;
+    }
+    #certnova-cba-free-root .cn-legal a {
+      color: var(--cn-blue);
+      text-decoration: underline;
+    }
+    #certnova-cba-free-root .cn-btn {
+      width: 100%;
+      appearance: none;
+      border: none;
+      border-radius: 10px;
+      padding: 0.88rem 1.15rem;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      min-height: 48px;
+      background: var(--cn-blue);
+      color: var(--cn-white);
+    }
+    #certnova-cba-free-root .cn-btn:hover:not(:disabled) {
+      filter: brightness(0.95);
+    }
+    #certnova-cba-free-root .cn-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+    #certnova-cba-free-root .cn-msg {
+      margin-top: 1rem;
+      padding: 0.75rem 0.85rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      display: none;
+    }
+    #certnova-cba-free-root .cn-msg.cn-show {
+      display: block;
+    }
+    #certnova-cba-free-root .cn-msg.cn-ok {
+      border: 1px solid #b7e1c1;
+      background: #f0fff4;
+      color: #14532d;
+    }
+    #certnova-cba-free-root .cn-msg.cn-err {
+      border: 1px solid #f5c2c7;
+      background: #fff5f5;
+      color: #842029;
+    }
+  </style>
+
+  <div class="cn-brand" aria-hidden="true">
+    <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="26" y="4" width="32" height="32" rx="9" transform="rotate(45 26 4)" fill="#0063F5" />
+      <circle cx="26" cy="26" r="7" fill="white" />
+    </svg>
+    <div class="cn-brand-text">
+      <strong>CertNova</strong>
+      <span>Software Solutions</span>
+    </div>
+  </div>
+
+  <h1>Free CBA Assessment</h1>
+  <p class="cn-sub">Enter your details below and we’ll reach out about your free CBA assessment.</p>
+
+  <form id="certnova-cba-free-form" novalidate>
+    <div class="cn-row">
+      <div class="cn-field">
+        <label class="cn-label" for="cn-FIRSTNAME">First name <span class="cn-req" aria-hidden="true">*</span></label>
+        <input id="cn-FIRSTNAME" name="FIRSTNAME" type="text" autocomplete="given-name" required maxlength="120" />
+      </div>
+      <div class="cn-field">
+        <label class="cn-label" for="cn-LASTNAME">Last name <span class="cn-req" aria-hidden="true">*</span></label>
+        <input id="cn-LASTNAME" name="LASTNAME" type="text" autocomplete="family-name" required maxlength="120" />
+      </div>
+    </div>
+    <div class="cn-field">
+      <label class="cn-label" for="cn-EMAIL">Email address <span class="cn-req" aria-hidden="true">*</span></label>
+      <input id="cn-EMAIL" name="EMAIL" type="email" autocomplete="email" required />
+    </div>
+    <div class="cn-field">
+      <label class="cn-label" for="cn-PHONE">Phone number <span class="cn-req" aria-hidden="true">*</span></label>
+      <input id="cn-PHONE" name="PHONE" type="tel" autocomplete="tel" required minlength="7" maxlength="40" />
+    </div>
+
+    <fieldset class="cn-legal">
+      <label class="cn-check">
+        <input type="checkbox" name="agree_privacy" value="true" required />
+        <span>I agree to the <a href="https://competencybasedassessment.ca/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</span>
+      </label>
+      <label class="cn-check">
+        <input type="checkbox" name="agree_terms" value="true" required />
+        <span>I agree to the <a href="https://competencybasedassessment.ca/terms-and-conditions/" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>.</span>
+      </label>
+    </fieldset>
+
+    <button id="cn-btn-submit" class="cn-btn" type="submit">Get My Free Assessment</button>
+  </form>
+
+  <div id="cn-form-msg" class="cn-msg" role="status" aria-live="polite"></div>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('certnova-cba-free-root');
+    var form = document.getElementById('certnova-cba-free-form');
+    var msg = document.getElementById('cn-form-msg');
+    var successRedirectUrl = 'https://competencybasedassessment.ca/free-cba-assessment/';
+
+    function apiBase() {
+      if (typeof window.CERTNOVA_BREVO_FORMS_API === 'string' && window.CERTNOVA_BREVO_FORMS_API.trim()) {
+        return window.CERTNOVA_BREVO_FORMS_API.replace(/\/+$/, '');
+      }
+      return '';
+    }
+
+    function resolveApiBase() {
+      var b = apiBase();
+      if (b) return b;
+      try {
+        if ((window.location.pathname || '').indexOf('/forms/') !== -1) {
+          return window.location.origin;
+        }
+      } catch (e) {}
+      return '';
+    }
+
+    function showMessage(kind, text) {
+      msg.className = 'cn-msg cn-show ' + (kind === 'ok' ? 'cn-ok' : 'cn-err');
+      msg.textContent = text;
+    }
+
+    function hideMessage() {
+      msg.className = 'cn-msg';
+      msg.textContent = '';
+    }
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      hideMessage();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      var base = resolveApiBase();
+      var formKey = root.getAttribute('data-form-key') || 'CBA_Free_Assessment';
+      if (!base) {
+        showMessage('err', 'Set window.CERTNOVA_BREVO_FORMS_API to your API server URL.');
+        return;
+      }
+
+      var fd = new FormData(form);
+      var payload = {
+        FIRSTNAME: (fd.get('FIRSTNAME') || '').toString().trim(),
+        LASTNAME: (fd.get('LASTNAME') || '').toString().trim(),
+        EMAIL: (fd.get('EMAIL') || '').toString().trim(),
+        PHONE: (fd.get('PHONE') || '').toString().trim(),
+        agree_privacy: fd.get('agree_privacy') ? true : false,
+        agree_terms: fd.get('agree_terms') ? true : false,
+      };
+
+      var submitBtn = document.getElementById('cn-btn-submit');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      fetch(base + '/api/forms/' + encodeURIComponent(formKey), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { res: res, data: data };
+          });
+        })
+        .then(function (_ref) {
+          var res = _ref.res;
+          var data = _ref.data;
+          if (res.ok && data && data.ok) {
+            if (submitBtn) submitBtn.textContent = 'Redirecting…';
+            window.location.href = successRedirectUrl;
+            return;
+          }
+          var detail = (data && data.error) || 'Something went wrong. Please try again.';
+          showMessage('err', detail);
+        })
+        .catch(function () {
+          showMessage('err', 'Network error. Please try again in a moment.');
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Get My Free Assessment';
+          }
+        });
+    });
+  })();
+</script>
