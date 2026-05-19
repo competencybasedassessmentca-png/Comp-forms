@@ -2,12 +2,12 @@
   WordPress: paste into a Custom HTML block.
   <script>window.CERTNOVA_BREVO_FORMS_API = 'https://forms.competencybasedassessment.ca';</script>
 -->
-<div id="certnova-cba-free-root" class="certnova-form" data-form-key="CBA_Free_Assessment" data-thank-you="free_assessment">
+<div id="certnova-cba-example-root" class="certnova-form" data-form-key="CBA_Free_Example" data-thank-you="free_example">
   <link rel="stylesheet" href="/forms/shared/forms-ui.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-    #certnova-cba-free-root.certnova-form {
+    #certnova-cba-example-root.certnova-form {
       --cn-blue: #0063f5;
       --cn-black: #000000;
       --cn-white: #ffffff;
@@ -21,63 +21,63 @@
       padding: clamp(1rem, 4vw, 1.75rem) clamp(0.85rem, 4vw, 1.35rem) clamp(2rem, 6vw, 2.75rem);
       box-sizing: border-box;
     }
-    #certnova-cba-free-root.certnova-form *,
-    #certnova-cba-free-root.certnova-form *::before,
-    #certnova-cba-free-root.certnova-form *::after {
+    #certnova-cba-example-root.certnova-form *,
+    #certnova-cba-example-root.certnova-form *::before,
+    #certnova-cba-example-root.certnova-form *::after {
       box-sizing: border-box;
     }
-    #certnova-cba-free-root .cn-brand {
+    #certnova-cba-example-root .cn-brand {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       margin-bottom: clamp(1rem, 3vw, 1.5rem);
     }
-    #certnova-cba-free-root .cn-brand svg {
+    #certnova-cba-example-root .cn-brand svg {
       width: clamp(44px, 10vw, 52px);
       height: clamp(44px, 10vw, 52px);
       flex-shrink: 0;
     }
-    #certnova-cba-free-root .cn-brand-text strong {
+    #certnova-cba-example-root .cn-brand-text strong {
       display: block;
       font-size: clamp(1.15rem, 3.5vw, 1.35rem);
       color: var(--cn-blue);
       font-weight: 700;
     }
-    #certnova-cba-free-root .cn-brand-text span {
+    #certnova-cba-example-root .cn-brand-text span {
       display: block;
       font-size: clamp(0.72rem, 2.2vw, 0.8rem);
       font-weight: 500;
       color: var(--cn-blue);
       margin-top: 0.12rem;
     }
-    #certnova-cba-free-root h1 {
+    #certnova-cba-example-root h1 {
       font-size: clamp(1.25rem, 4.2vw, 1.65rem);
       margin: 0 0 0.45rem;
       font-weight: 700;
       line-height: 1.2;
     }
-    #certnova-cba-free-root .cn-sub {
+    #certnova-cba-example-root .cn-sub {
       margin: 0 0 1.35rem;
       font-size: clamp(0.9rem, 2.6vw, 1rem);
       line-height: 1.55;
       color: var(--cn-muted);
     }
-    #certnova-cba-free-root .cn-field {
+    #certnova-cba-example-root .cn-field {
       margin-bottom: 1rem;
     }
-    #certnova-cba-free-root label.cn-label {
+    #certnova-cba-example-root label.cn-label {
       display: block;
       font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 0.35rem;
     }
-    #certnova-cba-free-root .cn-req {
+    #certnova-cba-example-root .cn-req {
       color: var(--cn-blue);
       font-weight: 700;
     }
-    #certnova-cba-free-root input[type='text'],
-    #certnova-cba-free-root input[type='email'],
-    #certnova-cba-free-root input[type='tel'] {
+    #certnova-cba-example-root input[type='text'],
+    #certnova-cba-example-root input[type='email'],
+    #certnova-cba-example-root input[type='tel'] {
       width: 100%;
       padding: 0.7rem 0.8rem;
       border: 1px solid var(--cn-border);
@@ -86,26 +86,26 @@
       font-family: inherit;
       min-height: 48px;
     }
-    #certnova-cba-free-root input:focus {
+    #certnova-cba-example-root input:focus {
       outline: 2px solid var(--cn-blue);
       outline-offset: 2px;
       border-color: var(--cn-blue);
     }
-    #certnova-cba-free-root .cn-row {
+    #certnova-cba-example-root .cn-row {
       display: grid;
       gap: 0.75rem;
     }
     @media (min-width: 480px) {
-      #certnova-cba-free-root .cn-row {
+      #certnova-cba-example-root .cn-row {
         grid-template-columns: 1fr 1fr;
       }
     }
-    #certnova-cba-free-root .cn-legal {
+    #certnova-cba-example-root .cn-legal {
       border: none;
       padding: 0;
       margin: 0.25rem 0 1rem;
     }
-    #certnova-cba-free-root .cn-check {
+    #certnova-cba-example-root .cn-check {
       display: flex;
       align-items: flex-start;
       gap: 0.55rem;
@@ -113,18 +113,18 @@
       line-height: 1.35;
       margin-bottom: 0.5rem;
     }
-    #certnova-cba-free-root .cn-check input {
+    #certnova-cba-example-root .cn-check input {
       width: 1.1rem;
       height: 1.1rem;
       margin-top: 0.12rem;
       accent-color: var(--cn-blue);
       flex-shrink: 0;
     }
-    #certnova-cba-free-root .cn-legal a {
+    #certnova-cba-example-root .cn-legal a {
       color: var(--cn-blue);
       text-decoration: underline;
     }
-    #certnova-cba-free-root .cn-btn {
+    #certnova-cba-example-root .cn-btn {
       width: 100%;
       appearance: none;
       border: none;
@@ -138,29 +138,29 @@
       background: var(--cn-blue);
       color: var(--cn-white);
     }
-    #certnova-cba-free-root .cn-btn:hover:not(:disabled) {
+    #certnova-cba-example-root .cn-btn:hover:not(:disabled) {
       filter: brightness(0.95);
     }
-    #certnova-cba-free-root .cn-btn:disabled {
+    #certnova-cba-example-root .cn-btn:disabled {
       opacity: 0.65;
       cursor: not-allowed;
     }
-    #certnova-cba-free-root .cn-msg {
+    #certnova-cba-example-root .cn-msg {
       margin-top: 1rem;
       padding: 0.75rem 0.85rem;
       border-radius: 10px;
       font-size: 0.95rem;
       display: none;
     }
-    #certnova-cba-free-root .cn-msg.cn-show {
+    #certnova-cba-example-root .cn-msg.cn-show {
       display: block;
     }
-    #certnova-cba-free-root .cn-msg.cn-ok {
+    #certnova-cba-example-root .cn-msg.cn-ok {
       border: 1px solid #b7e1c1;
       background: #f0fff4;
       color: #14532d;
     }
-    #certnova-cba-free-root .cn-msg.cn-err {
+    #certnova-cba-example-root .cn-msg.cn-err {
       border: 1px solid #f5c2c7;
       background: #fff5f5;
       color: #842029;
@@ -178,11 +178,11 @@
     </div>
   </div>
 
-  <h1>Free CBA Assessment</h1>
-  <p class="cn-sub">Enter your details below and we’ll reach out about your free CBA assessment.</p>
+  <h1>Free CBA Example</h1>
+  <p class="cn-sub">Enter your details below and we’ll reach out about your free CBA example.</p>
 
   <div class="cn-form-wrap">
-  <form id="certnova-cba-free-form" novalidate>
+  <form id="certnova-cba-example-form" novalidate>
     <div class="cn-row">
       <div class="cn-field">
         <label class="cn-label" for="cn-FIRSTNAME">First name <span class="cn-req" aria-hidden="true">*</span></label>
@@ -214,7 +214,7 @@
     </fieldset>
 
     <div class="cn-turnstile-wrap" aria-label="Security check"></div>
-    <button id="cn-btn-submit" class="cn-btn" type="submit">Get My Free Assessment</button>
+    <button id="cn-btn-submit" class="cn-btn" type="submit">Get My Free CBA Example</button>
   </form>
   </div>
 
@@ -224,8 +224,8 @@
 <script src="/forms/shared/forms-ui.js"></script>
 <script>
   (function () {
-    var root = document.getElementById('certnova-cba-free-root');
-    var form = document.getElementById('certnova-cba-free-form');
+    var root = document.getElementById('certnova-cba-example-root');
+    var form = document.getElementById('certnova-cba-example-form');
     var msg = document.getElementById('cn-form-msg');
     function resolveApiBase() {
       var b = window.CertnovaForms && CertnovaForms.apiBase();
@@ -259,7 +259,7 @@
       }
 
       var base = resolveApiBase();
-      var formKey = root.getAttribute('data-form-key') || 'CBA_Free_Assessment';
+      var formKey = root.getAttribute('data-form-key') || 'CBA_Free_Example';
       if (!base) {
         showMessage('err', 'Set window.CERTNOVA_BREVO_FORMS_API to your API server URL.');
         return;

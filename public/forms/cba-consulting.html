@@ -3,7 +3,8 @@
   Set API origin if not same-host:
     <script>window.CERTNOVA_BREVO_FORMS_API = 'https://your-domain.com';</script>
 -->
-<div id="certnova-cba-consulting-root" class="certnova-form" data-form-key="CBA_Consulting">
+<div id="certnova-cba-consulting-root" class="certnova-form" data-form-key="CBA_Consulting" data-thank-you="cba_review">
+  <link rel="stylesheet" href="/forms/shared/forms-ui.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700&display=swap');
 
@@ -380,6 +381,7 @@
     you on the best next steps.
   </p>
 
+  <div class="cn-form-wrap">
   <div class="cn-stepper" aria-label="Form steps">
     <div class="cn-progress-track">
       <div class="cn-progress-fill" id="cn-progress-fill"></div>
@@ -542,16 +544,19 @@
         </label>
       </fieldset>
 
+      <div class="cn-turnstile-wrap" aria-label="Security check"></div>
       <div class="cn-nav cn-nav-final">
         <button type="button" class="cn-btn cn-btn-back cn-btn-prev" data-go="prev">Back</button>
         <button id="cn-btn-submit" class="cn-btn cn-btn-primary" type="submit">Get Support</button>
       </div>
     </div>
   </form>
+  </div>
 
   <div id="cn-form-msg" class="cn-msg" role="status" aria-live="polite"></div>
 </div>
 
+<script src="/forms/shared/forms-ui.js"></script>
 <script>
   (function () {
     var root = document.getElementById('certnova-cba-consulting-root');
@@ -564,7 +569,6 @@
     var stepLabels = document.getElementById('cn-step-labels');
     var totalSteps = 4;
     var currentStep = 1;
-    var successRedirectUrl = 'https://competencybasedassessment.ca/';
     var maxFileBytes = 10 * 1024 * 1024;
 
     var categories = [
@@ -760,54 +764,30 @@
       });
 
       var submitBtn = document.getElementById('cn-btn-submit');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending…';
-      }
+      if (submitBtn) submitBtn.disabled = true;
 
-      fetch(base + '/api/forms/' + encodeURIComponent(formKey), {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: fd,
+      CertnovaForms.submitWithUi(root, function (token) {
+        fd.append('turnstileToken', token);
+        return fetch(base + '/api/forms/' + encodeURIComponent(formKey), {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: fd,
+        });
       })
-        .then(function (res) {
-          return res.json().then(function (data) {
-            return { res: res, data: data };
-          });
-        })
-        .then(function (_ref) {
-          var res = _ref.res;
-          var data = _ref.data;
-          if (res.ok && data && data.ok) {
-            var submitBtn = document.getElementById('cn-btn-submit');
-            if (submitBtn) submitBtn.textContent = 'Redirecting…';
-            window.location.href = successRedirectUrl;
-            return;
+        .catch(function (err) {
+          if (!root.querySelector('.cn-thank-you.cn-show')) {
+            showMessage('err', err.message || 'Network error. Please try again in a moment.');
           }
-          var detail =
-            data && data.error
-              ? data.error
-              : 'Something went wrong. Please check your answers and try again.';
-          if (data && data.details && data.details.fieldErrors) {
-            var fe = data.details.fieldErrors;
-            var parts = [];
-            Object.keys(fe).forEach(function (k) {
-              if (fe[k] && fe[k][0]) parts.push(fe[k][0]);
-            });
-            if (parts.length) detail = parts.join(' ');
-          }
-          showMessage('err', detail);
-        })
-        .catch(function () {
-          showMessage('err', 'Network error. Please try again in a moment.');
         })
         .finally(function () {
-          if (submitBtn) {
+          if (submitBtn && !root.querySelector('.cn-thank-you.cn-show')) {
             submitBtn.disabled = false;
             submitBtn.textContent = 'Get Support';
           }
         });
     });
+
+    if (window.CertnovaForms) CertnovaForms.initTurnstile(root);
 
     applyStep(1);
   })();

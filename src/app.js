@@ -4,6 +4,7 @@ import path from 'path';
 import multer from 'multer';
 import { fileURLToPath } from 'url';
 import { resolveForm, listFormKeys, listFormsCatalog } from './forms/index.js';
+import { verifyTurnstile, getTurnstileSiteKey } from './turnstile.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, '..');
@@ -32,6 +33,13 @@ app.get('/health', (_req, res) => {
 
 app.get('/api/forms', (_req, res) => {
   res.json({ ok: true, forms: listFormsCatalog() });
+});
+
+app.get('/api/config', (_req, res) => {
+  res.json({
+    ok: true,
+    turnstileSiteKey: getTurnstileSiteKey(),
+  });
 });
 
 function parseMultipart(req, res, next) {
@@ -71,6 +79,9 @@ app.post('/api/forms/:formKey', parseMultipart, async (req, res) => {
   }
 
   try {
+    const token = req.body.turnstileToken || req.body['cf-turnstile-response'];
+    await verifyTurnstile(token, req.ip);
+
     const uploaded = normalizeUploadedFiles(req.files);
     const result = await form.handle(req.body, uploaded);
     res.status(201).json({ ok: true, id: result?.id, filesUploaded: result?.filesUploaded });

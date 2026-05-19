@@ -1,0 +1,161 @@
+.cn-loading-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.92);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.cn-loading-overlay.cn-show {
+  display: flex;
+}
+.cn-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e8ecf0;
+  border-top-color: #0063f5;
+  border-radius: 50%;
+  animation: cn-spin 0.75s linear infinite;
+}
+.cn-loading-text {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  animation: cn-pulse 1.2s ease-in-out infinite;
+}
+@keyframes cn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes cn-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.cn-thank-you {
+  display: none;
+  text-align: center;
+  padding: clamp(1.5rem, 5vw, 2.5rem) clamp(0.5rem, 3vw, 1rem);
+  animation: cn-thank-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.cn-thank-you.cn-show {
+  display: block;
+}
+@keyframes cn-thank-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.cn-thank-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background: rgba(0, 99, 245, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cn-pop 0.5s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.cn-thank-icon svg {
+  width: 32px;
+  height: 32px;
+}
+@keyframes cn-pop {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.cn-thank-headline {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(1.35rem, 4.5vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000;
+  margin: 0 0 0.75rem;
+}
+.cn-thank-body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(0.95rem, 2.8vw, 1.05rem);
+  line-height: 1.55;
+  color: #333;
+  margin: 0 auto 1.25rem;
+  max-width: 36rem;
+}
+.cn-thank-steps {
+  list-style: none;
+  margin: 0 auto 1.5rem;
+  padding: 0;
+  max-width: 22rem;
+  text-align: left;
+}
+.cn-thank-steps li {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #222;
+  padding: 0.45rem 0 0.45rem 1.75rem;
+  position: relative;
+  animation: cn-step-in 0.45s ease both;
+}
+.cn-thank-steps li:nth-child(1) {
+  animation-delay: 0.25s;
+}
+.cn-thank-steps li:nth-child(2) {
+  animation-delay: 0.38s;
+}
+.cn-thank-steps li:nth-child(3) {
+  animation-delay: 0.51s;
+}
+@keyframes cn-step-in {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.cn-thank-steps li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #0063f5;
+  font-weight: 700;
+}
+.cn-thank-cta {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0063f5;
+  margin: 0;
+}
+
+.cn-turnstile-wrap {
+  margin: 1rem 0 0.25rem;
+  min-height: 65px;
+  display: flex;
+  justify-content: center;
+}

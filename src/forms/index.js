@@ -1,12 +1,14 @@
 import { handleCbaRejection, cbaRejectionMeta } from './cbaRejection.js';
 import { handleCbaConsulting, cbaConsultingMeta } from './cbaConsulting.js';
 import { handleCbaFreeAssessment, cbaFreeAssessmentMeta } from './cbaFreeAssessment.js';
+import { handleCbaFreeExample, cbaFreeExampleMeta } from './cbaFreeExample.js';
 
 /** @type {Map<string, { handle: Function, meta: object }>} */
 const registry = new Map([
   ['CBA_Rejection', { handle: handleCbaRejection, meta: cbaRejectionMeta }],
   ['CBA_Consulting', { handle: handleCbaConsulting, meta: cbaConsultingMeta }],
   ['CBA_Free_Assessment', { handle: handleCbaFreeAssessment, meta: cbaFreeAssessmentMeta }],
+  ['CBA_Free_Example', { handle: handleCbaFreeExample, meta: cbaFreeExampleMeta }],
 ]);
 
 export function resolveForm(formKey) {
