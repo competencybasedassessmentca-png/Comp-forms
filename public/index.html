@@ -33,14 +33,6 @@
         margin: 0 auto;
         padding: clamp(1.25rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem) 3rem;
       }
-      .cn-brand {
-        margin-bottom: clamp(1.5rem, 4vw, 2rem);
-      }
-      .cn-brand-logo {
-        display: block;
-        width: min(100%, 240px);
-        height: auto;
-      }
       h1 {
         margin: 0 0 0.4rem;
         font-size: clamp(1.4rem, 4.5vw, 2rem);
@@ -139,27 +131,26 @@
         font-size: 0.95rem;
         padding: 2rem 0;
       }
-      .cn-footer {
+      .cn-powered-by {
         margin-top: 2.5rem;
         padding-top: 1rem;
         border-top: 1px solid var(--cn-border);
-        font-size: 0.8rem;
+        text-align: center;
+        font-size: clamp(0.75rem, 2.2vw, 0.82rem);
         color: #888;
+      }
+      .cn-powered-by a {
+        color: var(--cn-blue);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .cn-powered-by a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
     <main class="cn-page">
-      <div class="cn-brand">
-        <img
-          src="/assets/certnova-logo.png"
-          alt="CertNova Software Solutions"
-          class="cn-brand-logo"
-          width="240"
-          height="52"
-        />
-      </div>
-
       <h1>Lead forms</h1>
       <p class="cn-lead">Choose a form below. Submissions are saved to Brevo contact lists for follow-up.</p>
 
@@ -167,7 +158,10 @@
         <p class="cn-loading" id="cn-loading">Loading forms…</p>
       </div>
 
-      <p class="cn-footer">CertNova · forms.competencybasedassessment.ca</p>
+      <p class="cn-powered-by">
+        Powered by
+        <a href="https://competencybasedassessment.ca/" target="_blank" rel="noopener noreferrer">CertNova</a>
+      </p>
     </main>
 
     <script>

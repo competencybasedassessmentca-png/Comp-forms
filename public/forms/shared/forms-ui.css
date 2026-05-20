@@ -160,14 +160,48 @@
   justify-content: center;
 }
 
-.cn-brand {
-  display: block;
-  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+/* Shared form shell (embed + standalone) */
+.certnova-form {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
-.cn-brand-logo {
-  display: block;
-  width: min(100%, 240px);
-  height: auto;
+.certnova-form input,
+.certnova-form select,
+.certnova-form textarea,
+.certnova-form button {
+  max-width: 100%;
+}
+.certnova-form .cn-turnstile-wrap iframe {
+  max-width: 100%;
+}
+.certnova-form input[type='file'] {
+  font-size: clamp(0.82rem, 2.4vw, 0.95rem);
+  word-break: break-word;
+}
+
+.cn-powered-by {
+  margin-top: clamp(1.5rem, 4vw, 2rem);
+  padding-top: 1rem;
+  border-top: 1px solid #e8ecf0;
+  text-align: center;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(0.75rem, 2.2vw, 0.82rem);
+  color: #888;
+  line-height: 1.4;
+}
+.cn-powered-by a {
+  color: #0063f5;
+  font-weight: 600;
+  text-decoration: none;
+}
+.cn-powered-by a:hover {
+  text-decoration: underline;
+}
+.cn-powered-by a:focus-visible {
+  outline: 2px solid #0063f5;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .cn-thank-return-wrap {
@@ -176,13 +210,17 @@
 .cn-thank-return {
   display: inline-block;
   font-family: 'Poppins', system-ui, sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.88rem, 2.6vw, 1rem);
   font-weight: 700;
   text-decoration: none;
   color: #fff;
   background: #0063f5;
-  padding: 0.85rem 1.35rem;
+  padding: 0.85rem clamp(0.85rem, 3vw, 1.35rem);
   border-radius: 10px;
+  max-width: 100%;
+  text-align: center;
+  line-height: 1.35;
+  word-break: break-word;
   transition:
     filter 0.2s ease,
     transform 0.2s ease;
@@ -194,4 +232,10 @@
 .cn-thank-return:focus-visible {
   outline: 2px solid #0063f5;
   outline-offset: 3px;
+}
+@media (max-width: 480px) {
+  .cn-thank-return {
+    display: block;
+    width: 100%;
+  }
 }

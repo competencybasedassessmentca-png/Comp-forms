@@ -193,7 +193,21 @@
     });
   }
 
+  var POWERED_BY_URL = 'https://competencybasedassessment.ca/';
+
+  function ensurePoweredBy(root) {
+    if (!root || root.querySelector('.cn-powered-by')) return;
+    var el = document.createElement('p');
+    el.className = 'cn-powered-by';
+    el.innerHTML =
+      'Powered by <a href="' +
+      POWERED_BY_URL +
+      '" target="_blank" rel="noopener noreferrer">CertNova</a>';
+    root.appendChild(el);
+  }
+
   function initTurnstile(root) {
+    ensurePoweredBy(root);
     var wrap = root.querySelector('.cn-turnstile-wrap');
     if (!wrap) return Promise.resolve();
     return fetchSiteKey().then(function (key) {
@@ -265,9 +279,25 @@
       });
   }
 
+  function initAllForms() {
+    var roots = document.querySelectorAll('.certnova-form');
+    for (var i = 0; i < roots.length; i++) {
+      ensurePoweredBy(roots[i]);
+    }
+  }
+
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAllForms);
+    } else {
+      initAllForms();
+    }
+  }
+
   global.CertnovaForms = {
     THANK_YOU: THANK_YOU,
     apiBase: apiBase,
+    ensurePoweredBy: ensurePoweredBy,
     initTurnstile: initTurnstile,
     showLoading: showLoading,
     showThankYou: showThankYou,
