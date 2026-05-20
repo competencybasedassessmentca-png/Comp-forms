@@ -114,7 +114,8 @@
       '<h2 class="cn-thank-headline"></h2>' +
       '<p class="cn-thank-body"></p>' +
       '<ul class="cn-thank-steps"></ul>' +
-      '<p class="cn-thank-cta"></p>';
+      '<p class="cn-thank-cta"></p>' +
+      '<p class="cn-thank-return-wrap"><a class="cn-thank-return" href="https://competencybasedassessment.ca/">Return to the website: competencybasedassessment.ca</a></p>';
     root.appendChild(el);
     return el;
   }
@@ -135,6 +136,13 @@
     panel.querySelector('.cn-thank-headline').textContent = cfg.headline;
     panel.querySelector('.cn-thank-body').textContent = cfg.body;
     panel.querySelector('.cn-thank-cta').textContent = cfg.cta;
+    if (!panel.querySelector('.cn-thank-return')) {
+      var returnWrap = document.createElement('p');
+      returnWrap.className = 'cn-thank-return-wrap';
+      returnWrap.innerHTML =
+        '<a class="cn-thank-return" href="https://competencybasedassessment.ca/">Return to the website: competencybasedassessment.ca</a>';
+      panel.appendChild(returnWrap);
+    }
     var steps = panel.querySelector('.cn-thank-steps');
     steps.innerHTML = '';
     cfg.steps.forEach(function (s) {

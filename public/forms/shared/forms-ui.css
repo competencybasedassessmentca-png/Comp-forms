@@ -159,3 +159,39 @@
   display: flex;
   justify-content: center;
 }
+
+.cn-brand {
+  display: block;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+}
+.cn-brand-logo {
+  display: block;
+  width: min(100%, 240px);
+  height: auto;
+}
+
+.cn-thank-return-wrap {
+  margin-top: 1.75rem;
+}
+.cn-thank-return {
+  display: inline-block;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  background: #0063f5;
+  padding: 0.85rem 1.35rem;
+  border-radius: 10px;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+.cn-thank-return:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+.cn-thank-return:focus-visible {
+  outline: 2px solid #0063f5;
+  outline-offset: 3px;
+}

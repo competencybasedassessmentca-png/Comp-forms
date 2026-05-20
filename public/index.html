@@ -34,29 +34,12 @@
         padding: clamp(1.25rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem) 3rem;
       }
       .cn-brand {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
         margin-bottom: clamp(1.5rem, 4vw, 2rem);
       }
-      .cn-brand svg {
-        width: clamp(44px, 10vw, 52px);
-        height: clamp(44px, 10vw, 52px);
-        flex-shrink: 0;
-      }
-      .cn-brand strong {
+      .cn-brand-logo {
         display: block;
-        font-size: clamp(1.15rem, 3.5vw, 1.35rem);
-        color: var(--cn-blue);
-        font-weight: 700;
-        line-height: 1.1;
-      }
-      .cn-brand span {
-        display: block;
-        font-size: clamp(0.72rem, 2.2vw, 0.8rem);
-        font-weight: 500;
-        color: var(--cn-blue);
-        margin-top: 0.12rem;
+        width: min(100%, 240px);
+        height: auto;
       }
       h1 {
         margin: 0 0 0.4rem;
@@ -167,15 +150,14 @@
   </head>
   <body>
     <main class="cn-page">
-      <div class="cn-brand" aria-hidden="true">
-        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="26" y="4" width="32" height="32" rx="9" transform="rotate(45 26 4)" fill="#0063F5" />
-          <circle cx="26" cy="26" r="7" fill="white" />
-        </svg>
-        <div>
-          <strong>CertNova</strong>
-          <span>Software Solutions</span>
-        </div>
+      <div class="cn-brand">
+        <img
+          src="/assets/certnova-logo.png"
+          alt="CertNova Software Solutions"
+          class="cn-brand-logo"
+          width="240"
+          height="52"
+        />
       </div>
 
       <h1>Lead forms</h1>
