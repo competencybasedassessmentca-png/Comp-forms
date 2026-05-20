@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import { upsertBrevoContact } from '../brevo.js';
 
-/** Brevo list "CBA Free Example Leads" — update LIST_ID if your Brevo list number differs */
-const LIST_ID = 10;
+/** Brevo list "CBA Free Example" */
+const LIST_ID = 13;
 
 const simpleLeadSchema = z.object({
   FIRSTNAME: z.string().trim().min(1, 'First name is required').max(120),
